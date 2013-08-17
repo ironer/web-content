@@ -68,11 +68,10 @@ Adresář `www` slouží pro ukládání obrázků, javascriptu, CSS a dalších
 Nejdůležitějším adresářem pro nás je `app`, ve kterém nalezneme soubor `bootstrap.php`. Ten nahraje framework, nakonfiguruje aplikaci, aktivuje [autoloading |/auto-loading], nastaví [debugger |/debugging] a [routování |/routing].
 
 
+Úklid
+=====
 
-Cleanup
-=======
-
-The sandbox contains some sample code. You should probably start by removing it before you write your own code - feel free to delete the `app/templates/Homepage/default.latte` file. We’ll add our own content in a minute.
+Sandbox obsahuje vzorový kód, který nebudeme potřebovat, takže ho můžeme smazat. Můžeme například odstranit soubor `app/templates/Homepage/default.latte`, protože si za chvíli vytvoříme vlastní.
 
 
 Tracy
