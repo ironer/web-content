@@ -1,5 +1,5 @@
-Getting Started
-***************
+Začínáme
+********
 
 .[perex]
 Poznáme Framework Nette a vytvoříme naši první aplikaci.
@@ -8,64 +8,64 @@ Napřed ověříme, že náš server splňuje [požadavky|/requirements] Nette F
 
 Nette Framework můžeme stáhnout [manuálně |www:download], ale lepší je k vytvoření projektu použít [Composer |/composer]. [Dokumentace |http://getcomposer.org/doc/] Composeru je perfektním zdrojem informací k seznámení se s tímto špickovým nástrojem pro správu závislostí, který je téměř nezbytností pro každého, kdo chce ve svých projektech používat knihovny ostatních vývojářů.
 
-Composerem můžeme snadno stáhnout a naistalovat základ aplikace známý pod označením Sandbox, který již obsahuje Nette Framework. V příkazovém řádku otevřeme adresář obsahující root webu (např. `/var/www` nebo `C:\InetPub`) a spustíme následující příkaz:
+Composerem můžeme snadno stáhnout a naistalovat základ aplikace známý pod označením Sandbox, který již obsahuje Nette Framework. V příkazovém řádku otevřeme kořenový adresář webu (např. `/var/www` nebo `C:\InetPub`) a spustíme následující příkaz:
 
 /--code
 composer create-project nette/sandbox nette-blog
 \--
 
-Sandbox will be downloaded into `nette-blog` directory.
+Sandbox se stáhne do adresáře `nette-blog`.
 
-If you're developing on Mac OS X or Linux (or any other Unix based system), you need to configure write privileges to the web server.
+Pokud vyvíjíme na Mac OS X, Linuxu nebo jiném systému postaveném na Unixu, tak bude třeba nastavit práva zápisu pro webový server.
 
 /--code
 cd nette-blog && chmod -R a+rw temp log
 \--
 
 
-The Welcome Page
-====
+Uvítací stránka
+===============
 
-At this moment, the welcome page of the Sandbox should be running. Try it by opening your browser and going to the following URL:
+Už by nám měla běžet uvítací stránka Sandboxu. Můžeme ji navštívit, když v prohlížeči otevřeme následující adresu:
 
 /--
 http://localhost/nette-blog/www/
 \--
 
-and you should see the Nette Framework welcome page:
+měli bychom vidět uvítací stránku Nette Frameworku, která vypadá asi takto:
 
 [* welcome-620.jpg *]
 
-The application works and you can now start making changes to it.
+Aplikace funguje a my v ní můžeme začít provádět změny.
 
 
-Sandbox's Content
-====
+Obsah Sandboxu
+==============
 
-Sandbox has the following structure:
+Sandbox má následující strukturu:
 
 /--pre
-<b>www/</b>                      ← web root directory
+<b>www/</b>                      ← kořenový adresář webu
 └── <b>nette-blog/</b>
-    ├── <b>app/</b>              ← application directory
-    │   ├── <b>config/</b>       ← configuration files
-    │   ├── <b>model/</b>        ← model layer classes
-    │   ├── <b>presenters/</b>   ← presenter classes
-    │   ├── <b>templates/</b>    ← templates
-    │   └── <b>bootstrap.php</b> ← boot file
+    ├── <b>app/</b>              ← adresář aplikace
+    │   ├── <b>config/</b>       ← konfigurační soubory
+    │   ├── <b>model/</b>        ← třídy modelové vrstvy
+    │   ├── <b>presenters/</b>   ← třídy presenterů
+    │   ├── <b>templates/</b>    ← šablony
+    │   └── <b>bootstrap.php</b> ← soubor, který zavádí aplikaci
     │
-    ├── <b>libs/</b>             ← libraries for your application
-    │   └── <b>Nette/</b>        ← like your favorite framework :-)
+    ├── <b>libs/</b>             ← knihovny pro použití v naší aplikaci
+    │   └── <b>Nette/</b>        ← jako třeba nejoblíbenější framework:-)
     │
-    ├── <b>log/</b>              ← here you can find error message logs
-    ├── <b>temp/</b>             ← place for temporary files (cache, sessions, etc.)
-    ├── <b>test/</b>             ← directory for unit tests
-    └── <b>www/</b>              ← local web root - this is the only directory accessible from the web
+    ├── <b>log/</b>              ← zde najdeme aplikační logy včetně chyb
+    ├── <b>temp/</b>             ← místo pro dočasné soubory (cache, sessions, atd.)
+    ├── <b>test/</b>             ← adresář pro unit testy
+    └── <b>www/</b>              ← aplikační kořenová složka webu - toto je jediný adresář přístupný přes web
 \--
 
-Directory `www` is supposed to store images, JavaScript, CSS, and other publicly available files. This is the only directory directly accessible from the browser, so you can point the root directory of your web server here (you can configure it in Apache, but let’s do it later as it’s not important right now).
+Adresář `www` slouží pro ukládání obrázků, javascriptu, CSS a dalších veřejně přístupných souborů. Tento adresář je jako jediný přístupný přes webový prohlížeč, takže do něj můžeme nasměrovat nějakou doménu (to se dá udělat změnou konfigurace serveru Apache, ale k tomu se dostaneme až později).
 
-The most important directory for you is `app`. You can find `bootstrap.php` file there, which loads the framework and configures the application. It activates [autoloading |/auto-loading] and sets up the [debugger |/debugging] and [routes |/routing].
+Nejdůležitějším adresářem pro nás je `app`, ve kterém nalezneme soubor `bootstrap.php`. Ten nahraje framework, nakonfiguruje aplikaci, aktivuje [autoloading |/auto-loading], nastaví [debugger |/debugging] a [routování |/routing].
 
 
 
